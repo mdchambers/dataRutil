@@ -2,7 +2,7 @@
 #' Merge all files in a path into one data frame
 #'
 #' This function opens all files in the given directory and merges
-#' them into one data. Files must meet the following requirements:
+#' them into one data. Files must meet the following requirement:\
 #'      - Merge value in first column
 #'      - Must have headers
 #'      - Header value for data to be merged must be unique
@@ -31,6 +31,6 @@ LoadBC <- function(){
 #' Removes all objects from the global environment.
 #' @keywords rm
 #' @export
-rmAll <- function(){
+rmall <- function(){
     rm(list=ls())
 }
