@@ -2,7 +2,7 @@
 #' Merge all tsv files in a path into one data frame
 #'
 #' This function opens all files in the given directory and merges
-#' them into one data. Files must meet the following requirement:\
+#' them into one dataframe. Files must meet the following requirement:\
 #'      - Merge value in first column
 #'      - Must have headers
 #'      - Header value for data to be merged must be unique
@@ -12,7 +12,7 @@
 #' @export
 multMerge <- function(mypath){
     filenames=list.files(path=mypath, full.names=TRUE)
-    datalist = lapply(filenames, function(x){read.table(file=x,header=T)})
+    datalist = lapply(filenames, function(x){read.table(file=x,header=T,stringsAsFactors=FALSE)})
     Reduce(function(x,y) {merge(x,y)}, datalist)
 }
 
