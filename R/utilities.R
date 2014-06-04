@@ -51,3 +51,56 @@ loadBC <- function(){
 rmAll <- function(){
     rm(list=ls())
 }
+
+#' Loads the quantitation xlsx from a qPCR run into a melted data.frame
+#'
+#' @param quant.file the filename of the xlsx spreedsheet to load
+#' @keywords qPCR
+#' @export
+loadPCRQuant <- function(quant.file){
+	require(xlsx)
+	require(reshape2)
+	quant <- read.xlsx(quant.file, 1)
+	quant$NA. <- NULL
+	quant.melt <- melt(quant, id.vars="Cycle")
+	colnames(quant.melt) <- c("Cycle", "Sample", "RFU")
+	quant.melt$log2RFU <- log2(quant.melt$RFU)
+	return(quant.melt)
+}
+
+#' Loads the melting deriv xlsx from a qPCR run into a melted data.frame
+#'
+#' @param melt.file the filename of the xlsx spreedsheet to load
+#' @keywords qPCR
+#' @export
+loadPCRMeltDeriv <- function(melt.file){
+	require(xlsx)
+	require(reshape2)
+	melt <- read.xlsx(melt.file, 1)
+	melt$NA. <- NULL
+	melt.melt <- melt(melt, id.vars="Temperature")
+	colnames(melt.melt) <- c("Temp", "Sample", "dA")
+	return(melt.melt)
+}
+
+#' Saves several pdfs summarizing qPCR data
+#'
+#' @param prefix Prefix for files
+#' @param quant.file the filename of the xlsx spreedsheet to load
+#' @param melt.file the filename of the xlsx spreedsheet to load
+#' @keywords qPCR
+#' @export
+summarizeqPCR <- function(prefix, quant.file, melt.file){
+	q <- loadPCRQuant(quant.file)
+	m <- loadPCRMeltDeriv(melt.file)
+	library(ggplot2)
+
+	q.plot <- ggplot(data=q, aes(x=Cycle, y=RFU, color=Sample)) + geom_line() + theme_classic()
+	ggsave(paste0(prefix, "_", "quant.pdf"), q.plot, width=11, height=8.5)
+
+	log2.plot <- ggplot(data=q, aes(x=Cycle, y=log2(RFU), color=Sample)) + geom_line() + theme_classic()
+	ggsave(paste0(prefix, "_", "log2.pdf"), log2.plot, width=11, height=8.5)
+
+	melt.plot <- ggplot(data=m, aes(x=Temp, y=dA, color=Sample)) + geom_line() + theme_classic() + ylab(expression(-dA/dT))
+	ggsave(paste0(prefix, "_", "melt.pdf"), melt.plot, width=11, height= 8.5)
+}

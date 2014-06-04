@@ -10,7 +10,7 @@ multMerge(mypath)
 }
 \description{
 This function opens all files in the given directory and merges
-them into one data. Files must meet the following requirement:\
+them into one dataframe. Files must meet the following requirement:\
      - Merge value in first column
      - Must have headers
      - Header value for data to be merged must be unique
