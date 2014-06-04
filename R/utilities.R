@@ -1,4 +1,3 @@
-
 #' Merge all tsv files in a path into one data frame
 #'
 #' This function opens all files in the given directory and merges
@@ -33,7 +32,6 @@ multMergeCSV <- function(mypath){
     Reduce(function(x,y) {merge(x,y)}, datalist)
 }
 
-
 #' Load script for intstalling Bioconductor packages
 #'
 #' Sources the Bioconductor script from their website.
@@ -52,6 +50,14 @@ rmAll <- function(){
     rm(list=ls())
 }
 
+#' Performs ggsave with filename and dim 11 x 8.5
+#' param filename The filename for saved file
+#' @keywords ggplot2
+#' @export
+ggsave_page <- function(filename){
+	ggsave(filename, width=11, height=8.5)
+}
+
 #' Loads the quantitation xlsx from a qPCR run into a melted data.frame
 #'
 #' @param quant.file the filename of the xlsx spreedsheet to load
@@ -60,11 +66,17 @@ rmAll <- function(){
 loadPCRQuant <- function(quant.file){
 	require(xlsx)
 	require(reshape2)
-	quant <- read.xlsx(quant.file, 1)
+	quant <- read.xlsx(quant.file, 1, stringsAsFactors=F)
 	quant$NA. <- NULL
 	quant.melt <- melt(quant, id.vars="Cycle")
 	colnames(quant.melt) <- c("Cycle", "Well", "RFU")
 	quant.melt$log2RFU <- log2(quant.melt$RFU)
+
+	# Correct for incorrect Well numeric padding (i.e. C1 becomes C01)
+	# This is needed for compatability with Summary xlsx
+
+
+
 	return(quant.melt)
 }
 
@@ -76,10 +88,22 @@ loadPCRQuant <- function(quant.file){
 loadPCRMeltDeriv <- function(melt.file){
 	require(xlsx)
 	require(reshape2)
-	melt <- read.xlsx(melt.file, 1)
+	melt <- read.xlsx(melt.file, 1, stringsAsFactors=F)
 	melt$NA. <- NULL
 	melt.melt <- melt(melt, id.vars="Temperature")
 	colnames(melt.melt) <- c("Temp", "Well", "dA")
+	melt.melt$Well <- as.character(melt.melt$Well)
+	# Correct for incorrect Well numeric padding (i.e. C1 becomes C01)
+	# This is needed for compatability with Summary xlsx
+	.pad <- function(x){
+		if(nchar(x) < 3){
+			x <- paste0(substr(x,1,1), "0", substr(x,2,3))
+		}
+		return(x)
+	}
+
+	melt.melt$Well <- mapply(.pad, melt.melt$Well)
+
 	return(melt.melt)
 }
 
