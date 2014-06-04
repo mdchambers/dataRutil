@@ -63,7 +63,7 @@ loadPCRQuant <- function(quant.file){
 	quant <- read.xlsx(quant.file, 1)
 	quant$NA. <- NULL
 	quant.melt <- melt(quant, id.vars="Cycle")
-	colnames(quant.melt) <- c("Cycle", "Sample", "RFU")
+	colnames(quant.melt) <- c("Cycle", "Well", "RFU")
 	quant.melt$log2RFU <- log2(quant.melt$RFU)
 	return(quant.melt)
 }
@@ -79,7 +79,7 @@ loadPCRMeltDeriv <- function(melt.file){
 	melt <- read.xlsx(melt.file, 1)
 	melt$NA. <- NULL
 	melt.melt <- melt(melt, id.vars="Temperature")
-	colnames(melt.melt) <- c("Temp", "Sample", "dA")
+	colnames(melt.melt) <- c("Temp", "Well", "dA")
 	return(melt.melt)
 }
 
@@ -95,12 +95,12 @@ summarizeqPCR <- function(prefix, quant.file, melt.file){
 	m <- loadPCRMeltDeriv(melt.file)
 	library(ggplot2)
 
-	q.plot <- ggplot(data=q, aes(x=Cycle, y=RFU, color=Sample)) + geom_line() + theme_classic()
+	q.plot <- ggplot(data=q, aes(x=Cycle, y=RFU, color=Well)) + geom_line() + theme_classic()
 	ggsave(paste0(prefix, "_", "quant.pdf"), q.plot, width=11, height=8.5)
 
-	log2.plot <- ggplot(data=q, aes(x=Cycle, y=log2(RFU), color=Sample)) + geom_line() + theme_classic()
+	log2.plot <- ggplot(data=q, aes(x=Cycle, y=log2(RFU), color=Well)) + geom_line() + theme_classic()
 	ggsave(paste0(prefix, "_", "log2.pdf"), log2.plot, width=11, height=8.5)
 
-	melt.plot <- ggplot(data=m, aes(x=Temp, y=dA, color=Sample)) + geom_line() + theme_classic() + ylab(expression(-dA/dT))
+	melt.plot <- ggplot(data=m, aes(x=Temp, y=dA, color=Well)) + geom_line() + theme_classic() + ylab(expression(-dA/dT))
 	ggsave(paste0(prefix, "_", "melt.pdf"), melt.plot, width=11, height= 8.5)
 }
