@@ -3,7 +3,6 @@
 #'
 #' Returns all genes as a GeneList
 #'
-#' @param
 #' @keywords genes
 #' @export
 getDmelGenes <- function(){
