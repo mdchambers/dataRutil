@@ -56,3 +56,28 @@ rmAll <- function(){
 qn <- function(){
 	quit(save="no")
 }
+
+#' cat with newlines as sep
+#'
+#' Cats with newlines as seperator
+#'
+#' @param v A vector
+#' @keywords util
+#' @export
+catn <- function(v){
+	cat(v,sep="\n")
+}
+
+#' Cats with newlines to a file
+#'
+#' Cats with newlines to a file
+#'
+#' @param vec A vector
+#' @param file Filename to write to
+#' @keywords util
+#' @export
+catnf <- function(vec, file){
+	cat(vec, file=file, sep="\n")
+}
+
+
