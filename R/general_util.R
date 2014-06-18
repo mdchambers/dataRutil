@@ -68,7 +68,7 @@ catn <- function(v){
 	cat(v,sep="\n")
 }
 
-#' Cats with newlines to a file
+#' Writes to a file, elements seperated by newlines
 #'
 #' Cats with newlines to a file
 #'
@@ -78,6 +78,23 @@ catn <- function(v){
 #' @export
 catnf <- function(vec, file){
 	cat(vec, file=file, sep="\n")
+}
+
+#' Prints a list of vectors to individual files
+#'
+#' One file is generated per vector in the list.
+#' Files are named {suffix}{list_element_name}{prefix}
+#'
+#' @param l A list of vectors
+#' @param prefix A prefix to use
+#' @param suffix A suffix to use
+#' @return None
+#' @keywords util cat
+#' @export
+cat.list <- function(l, prefix="out_", suffix=".txt"){
+	for(i in 1:length(l)){
+		cat(l[[i]], file= paste0( prefix, names(l)[i], suffix ), sep="\n")
+	}
 }
 
 #' Generates a list with names taken from variables used in its creation
