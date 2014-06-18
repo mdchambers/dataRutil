@@ -80,4 +80,13 @@ catnf <- function(vec, file){
 	cat(vec, file=file, sep="\n")
 }
 
+#' Generates a list with names taken from variables used in its creation
+#'
+#' @param ... Elements to put in list
+#' @return A named list
+#' @keywords util
+#' @export
+named.list <- function(...){
+	setNames(list(...), as.character( match.call()[-1] ) )
+}
 
