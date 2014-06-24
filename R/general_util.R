@@ -47,7 +47,7 @@ loadBC <- function(){
 #' @keywords rm
 #' @export
 rmAll <- function(){
-    rm(list=ls())
+    rm(list=ls(.GlobalEnv), envir=.GlobalEnv)
 }
 
 #' Quits without saving
