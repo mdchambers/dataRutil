@@ -3,10 +3,12 @@
 \alias{multMerge}
 \title{Merge all tsv files in a path into one data frame}
 \usage{
-multMerge(mypath)
+multMerge(mypath, header = T)
 }
 \arguments{
 \item{mypath}{the path containing files to load (all files will be loaded)}
+
+\item{header}{do files have a header? If not, generate based on filenames}
 }
 \description{
 This function opens all files in the given directory and merges

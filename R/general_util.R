@@ -7,12 +7,23 @@
 #'      - Header value for data to be merged must be unique
 #'
 #' @param mypath the path containing files to load (all files will be loaded)
+#' @param header do files have a header? If not, generate based on filenames
 #' @keywords merge
 #' @export
-multMerge <- function(mypath){
-    filenames=list.files(path=mypath, full.names=TRUE)
-    datalist = lapply(filenames, function(x){read.table(file=x,header=T,stringsAsFactors=FALSE)})
-    Reduce(function(x,y) {merge(x,y)}, datalist)
+multMerge <- function(mypath,header=T){
+    filenames <- list.files(path=mypath, full.names=TRUE)
+    if(header){
+    	datalist <- lapply(filenames, function(x){read.table(file=x,header=T,stringsAsFactors=FALSE)})
+    } else {
+    	datalist <- lapply(filenames, function(x){
+    		t <- read.table(file=x, header=F, stringsAsFactors=FALSE)
+    		n <- ncol(t) - 1
+    		my.names <- c("name", paste(basename(x), seq(n),sep="_"))
+    		colnames(t) <- my.names
+    		return(t)
+    		})
+    }
+    Reduce(function(x,y) {merge(x,y,all=T)}, datalist)
 }
 
 #' Merge all csv files in a path into one data frame
