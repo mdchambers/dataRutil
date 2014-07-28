@@ -107,3 +107,16 @@ named.list <- function(...){
 	setNames(list(...), as.character( match.call()[-1] ) )
 }
 
+#' Returns a data.frame grep'd on colnames
+#'
+#' Returns a data.frame grep'd on colnames
+#'
+#' @param pattern Pattern to search for
+#' @param df data.frame to grep
+#' @return A data.frame
+#' @keywords data.frame grep
+#' @export
+grepcol <- function(pattern, df){
+	out <- df[, grepl(pattern, colnames(df))]
+	return(out)
+}
