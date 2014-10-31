@@ -43,42 +43,6 @@ multMergeCSV <- function(mypath){
     Reduce(function(x,y) {merge(x,y)}, datalist)
 }
 
-#' Load script for intstalling Bioconductor packages
-#'
-#' Sources the Bioconductor script from their website.
-#' Afterwards, use function biocLite("pkg name") to install/update pkgs.
-#'
-#' @export
-loadBC <- function(){
-    cat("\nSetting up bioconductor...\n")
-    source("http://bioconductor.org/biocLite.R")
-}
-
-#' Removes all objects from the global environment.
-#' @keywords rm
-#' @export
-rmAll <- function(){
-    rm(list=ls(.GlobalEnv), envir=.GlobalEnv)
-}
-
-#' Quits without saving
-#' @keywords quit
-#' @export
-qn <- function(){
-	quit(save="no")
-}
-
-#' cat with newlines as sep
-#'
-#' Cats with newlines as seperator
-#'
-#' @param v A vector
-#' @keywords util
-#' @export
-catn <- function(v){
-	cat(v,sep="\n")
-}
-
 #' Writes to a file, elements seperated by newlines
 #'
 #' Cats with newlines to a file
@@ -88,7 +52,7 @@ catn <- function(v){
 #' @keywords util
 #' @export
 catnf <- function(vec, file){
-	cat(vec, file=file, sep="\n")
+    cat(vec, file=file, sep="\n")
 }
 
 #' Prints a list of vectors to individual files
@@ -103,31 +67,7 @@ catnf <- function(vec, file){
 #' @keywords util cat
 #' @export
 cat.list <- function(l, prefix="out_", suffix=".txt"){
-	for(i in 1:length(l)){
-		cat(l[[i]], file= paste0( prefix, names(l)[i], suffix ), sep="\n")
-	}
-}
-
-#' Generates a list with names taken from variables used in its creation
-#'
-#' @param ... Elements to put in list
-#' @return A named list
-#' @keywords util
-#' @export
-named.list <- function(...){
-	setNames(list(...), as.character( match.call()[-1] ) )
-}
-
-#' Returns a data.frame grep'd on colnames
-#'
-#' Returns a data.frame grep'd on colnames
-#'
-#' @param pattern Pattern to search for
-#' @param df data.frame to grep
-#' @return A data.frame
-#' @keywords data.frame grep
-#' @export
-grepcol <- function(pattern, df){
-	out <- df[, grepl(pattern, colnames(df))]
-	return(out)
+    for(i in 1:length(l)){
+        cat(l[[i]], file= paste0( prefix, names(l)[i], suffix ), sep="\n")
+    }
 }

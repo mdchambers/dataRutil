@@ -1,0 +1,349 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 269.0,
+		"selected_items":
+		[
+			[
+				"tasks",
+				"Tasks: View as HTML"
+			],
+			[
+				"strapdo",
+				"Strapdown.js Markdown: Preview in a browser"
+			],
+			[
+				"strapdow",
+				"Strapdown.js Markdown: Preview in a browser"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"task html",
+				"Tasks: View as HTML"
+			],
+			[
+				"new ",
+				"Tasks: New document"
+			],
+			[
+				"syntax task",
+				"Set Syntax: Tasks"
+			],
+			[
+				"markdow",
+				"Set Syntax: Markdown"
+			],
+			[
+				"package",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"discover",
+				"Package Control: Discover Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"orgmo",
+				"Set Syntax: orgmode"
+			],
+			[
+				"prei",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"marks",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"mark",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"previe",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"cheat",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"syntax: R",
+				"Set Syntax: R Extended"
+			],
+			[
+				"R",
+				"R-Box Application"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"package inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"perl",
+				"Set Syntax: Perl"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"which ",
+			"import urllib2",
+			"import urlib2",
+			"import hashlib",
+			"import os",
+			"import urllib2",
+			"import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation') ",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/mike/Work.bio/dev/myutil-R",
+		"/Users/mike/Work.bio/dev/myutil-R/R"
+	],
+	"file_history":
+	[
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/R-Box/R-Box.sublime-settings",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/PlainTasks/PlainTasks (OSX).sublime-settings",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/User/PlainTasks.sublime-settings",
+		"/Users/mike/Work.bio/projects/projectsTODO.TODO",
+		"/Users/mike/Work.bio/projects/pak.gro.rnaseq_run2/pak.gro.rnaseq_run2.TODO",
+		"/Users/mike/Work.bio/projects/mike.nascent/140930.bam_metrics/all_tophat_summary.txt",
+		"/Users/mike/Work.bio/projects/mike.nascent/140930.counts/140930.counts.R",
+		"/Users/mike/Work.bio/projects/mike.nascent/todo.mdown",
+		"/Users/mike/Work.bio/projects/mike.nascent/readme.mdown",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/Users/mike/Work.bio/projects/mike.nascent/140929.hoffman/140929.sh",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/141016.R_macs2_venn/local.R",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/private/etc/postfix/main.cf",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/141016.R_macs2_venn/local.sh",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/141016.R_macs2_venn/.Rhistory",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/141016.R_macs2_venn/.RData",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/140908.macs2_vs_ctrl/output/logs/tp1.e3457679",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/140908.macs2_vs_ctrl/macs2_run.sh",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/todo.html",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/todo.mdown",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/140829.demulti_qc_align_sort_coverage/hoffman.sh",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/140829.demulti_qc_align_sort_coverage/fastqc/s_2_1_00_fastqc/s_2_1_00.fq_fastqc/fastqc_data.txt",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/140829.demulti_qc_align_sort_coverage/fastqc/s_2_1_00_fastqc/s_2_1_00.fq_fastqc/fastqc_report.html",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/readme.mdown",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/readme.html",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/User/HTML.sublime-settings",
+		"/Users/mike/Work.comp/lynda/Ex_Files_UaR_SublimeTxt_2/Exercise Files/roux_website/401.shtml",
+		"/Users/mike/Work.comp/lynda/Ex_Files_UaR_SublimeTxt_2/Exercise Files/roux_website/403.shtml",
+		"/Users/mike/Work.comp/lynda/Ex_Files_UaR_SublimeTxt_2/Exercise Files/roux_website/404.shtml",
+		"/Users/mike/Work.comp/lynda/Ex_Files_UaR_SublimeTxt_2/Exercise Files/roux_website/index.htm",
+		"/Users/mike/Work.comp/lynda/Ex_Files_UaR_SublimeTxt_2/Exercise Files/roux_website/_scripts/SpryTabbedPanels.js",
+		"/Users/mike/Work.comp/lynda/Ex_Files_UaR_SublimeTxt_2/Exercise Files/roux_website/_fonts/Bitter OFL SIL Font License 1.1.txt",
+		"/Users/mike/Work.comp/lynda/Ex_Files_UaR_SublimeTxt_2/Exercise Files/roux_website/_fonts/Google Android License.txt",
+		"/Users/mike/Work.comp/lynda/Ex_Files_UaR_SublimeTxt_2/Exercise Files/roux_website/_fonts/DroidSans-webfont.svg",
+		"/Users/mike/Work.bio/projects/pak.gro.rnaseq_run2/readme.mdown",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/Demultiplex.html",
+		"/Users/mike/Library/Application Support/Sublime Text 3/Packages/User/R-Box.sublime-settings",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/140903.macs2/macs2_run.sh",
+		"/Users/mike/Work.bio/projects/al.gro.chip_run1/141014.R_wig_bed_overlap_testing/macs2_bed/macs2_narrowpeak.bed",
+		"/Users/mike/.Rprofile",
+		"/Users/mike/Work.bio/projects/pak.gro.rnaseq_run2/141017.deseq/history.R",
+		"/Users/mike/Work.bio/projects/pak.gro.rnaseq_run2/141017.deseq/goi.txt",
+		"/Users/mike/Work.bio/projects/pak.gro.rnaseq_run2/141017.deseq/samples.txt",
+		"/Users/mike/Work.bio/projects/pak.gro.rnaseq_run2/141017.deseq/local.R",
+		"/Users/mike/Work.bio/tmp/knitr/knitr-examples/001-minimal.Rmd",
+		"/Users/mike/Work.bio/tmp/knitr/knitr-examples/001-minimal.md",
+		"/Users/mike/Lab/Nascent RNA-seq/Protocols/marr Dmel_probes.txt",
+		"/Users/mike/Dropbox/Michael/Documents/153B - Winter 2014/ddATP.svg",
+		"/Users/mike/Work.bio/projects/gro.rnaseq3/bin/qseqPipeline_2.sh",
+		"/Users/mike/Downloads/source-code-1.media-5.pl",
+		"/Users/mike/Work.bio/projects/gro.rnaseq2/130227.rnaseq_to_chip_overlap_allgenes/input/ueALL",
+		"/Users/mike/Work.bio/projects/gro.rnaseq2/130227.rnaseq_to_chip_overlap_allgenes/input/oeALL"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Directory",
+			"~/bin/tophat_wrapper -p 4 -g 1 --solexa1.3-quals -G ~/annotation/Drosophila_melanogaster/UCSC/dm3/Annotation/Genes/genes.gtf -o $top_out /u/home/m/mchamber/annotation/index_dm3_igenome/genome $fastq",
+			"makeVennDiagram",
+			"writeDualVenn",
+			"thing",
+			"print"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 102.0
+	},
+	"project": "myutil-R.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"index",
+				"index.htm"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Work.bio/projects/mike.nascent/mike.nascent.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 236.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
