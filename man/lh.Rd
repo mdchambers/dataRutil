@@ -6,7 +6,7 @@
 lh(units = "b")
 }
 \arguments{
-\item{u}{Units for display, as listed in the object.size help ("b", "Kb", "Mb", "Gb", etc)}
+\item{u}{Units for display, as listed in the object.size help ("b", "xKb", "Mb", "Gb", etc)}
 }
 \value{
 A data.frame containing a list of objects and their sizes

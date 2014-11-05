@@ -49,35 +49,6 @@ merge.named.list <- function(l){
 
 }
 
-
-#' Returns a data.frame grep'd on colnames
-#'
-#' Returns a data.frame grep'd on colnames
-#'
-#' @param pattern Pattern to search for
-#' @param df data.frame to grep
-#' @return A data.frame
-#' @keywords data.frame grep
-#' @export
-grep.col <- function(pattern, df){
-	out <- df[, grepl(pattern, colnames(df), perl=T)]
-	return(out)
-}
-
-#' Returns a data.frame grep'd on rownames
-#'
-#' Returns a data.frame grep'd on rownames
-#'
-#' @param pattern Pattern to search for
-#' @param df data.frame to grep
-#' @return A data.frame
-#' @keywords data.frame grep
-#' @export
-grep.row <- function(pattern, df){
-	out <- df[grepl(pattern, rownames(df), perl=T),]
-	return(out)
-}
-
 #' Interleaves two vectors
 #'
 #' Interleaves two vectors. Vectors may be of unequal length, but should be of the same type.
@@ -98,7 +69,7 @@ interleave <- function(a, b){
 #'
 #' Lists all objects and sizes
 #'
-#' @param u Units for display, as listed in the object.size help ("b", "Kb", "Mb", "Gb", etc)
+#' @param u Units for display, as listed in the object.size help ("b", "xKb", "Mb", "Gb", etc)
 #' @return A data.frame containing a list of objects and their sizes
 #' @keywords utility ls
 #' @export
