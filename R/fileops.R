@@ -71,3 +71,22 @@ cat.list <- function(l, prefix="out_", suffix=".txt"){
         cat(l[[i]], file= paste0( prefix, names(l)[i], suffix ), sep="\n")
     }
 }
+
+#' Writes a TSV file
+#'
+#' Writes a TSV file using write.table. Defaults to:
+#'    Tab for sep
+#'    No quoting
+#'    No row.names
+#'
+#' @param x Data.frame printable object
+#' @param file Filename to write to
+#' @param rownames Print rownames? Defaults to FALSE
+#' @return None
+#' @keywords file IO
+#' @export
+write.tsv <- function(x, file, rownames=F, ...){
+    write.table(x, file, quote=F, sep="\t", row.names=rownames, ...)
+}
+
+

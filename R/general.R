@@ -81,5 +81,23 @@ lh <- function(units="b"){
 	    return(df[order(df$Size, decreasing=T),])
 }
 
+#' Sends timestamped log message to STDERR
+#'
+#' Sends timestamped log message to STDERR
+#'
+#' @param timestamp Whether or not to include timestamp
+#' @keywords utility log
+#' @export
+logd <- function(..., timestamp=T){
+
+	if(timestamp){
+		suffix <- paste(date(), "\n")
+	} else {
+		suffix <- "\n"
+	}
+	cat(..., suffix, file=stderr())
+}
+
+
 
 

@@ -161,6 +161,7 @@
 	],
 	"file_history":
 	[
+		"/Users/mike/Work.bio/dev/myutil-R/R/general.R",
 		"/Users/mike/Work.bio/dev/myutil-R/R/fileops.R",
 		"/Users/mike/Work.bio/projects/projectsTODO.TODO",
 		"/Users/mike/Work.bio/dev/myutil-R/R/ggplot_util.R",
@@ -359,6 +360,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"chip",
+				"~/Work.bio/projects/al.gro.chip_run1/al_gro_chip_run1.sublime-project"
+			],
 			[
 				"al",
 				"~/Work.bio/projects/al.gro.chip_run1/al_gro_chip_run1.sublime-project"
