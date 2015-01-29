@@ -89,4 +89,13 @@ write.tsv <- function(x, file, rownames=F, ...){
     write.table(x, file, quote=F, sep="\t", row.names=rownames, ...)
 }
 
-
+#' Returns a data_table using read.table
+#'
+#' Returns a data_table using read.table
+#'
+#' @return A data_table
+#' @keywords data_table write.table
+#' @export
+read_table <- function(...){
+    read.table(...) %>% dplyr::as_data_frame
+}
