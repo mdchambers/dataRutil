@@ -72,23 +72,6 @@ cat.list <- function(l, prefix="out_", suffix=".txt"){
     }
 }
 
-#' Writes a TSV file
-#'
-#' Writes a TSV file using write.table. Defaults to:
-#'    Tab for sep
-#'    No quoting
-#'    No row.names
-#'
-#' @param x Data.frame printable object
-#' @param file Filename to write to
-#' @param rownames Print rownames? Defaults to FALSE
-#' @return None
-#' @keywords file IO
-#' @export
-write.tsv <- function(x, file, rownames=F, ...){
-    write.table(x, file, quote=F, sep="\t", row.names=rownames, ...)
-}
-
 #' Returns a data_table using read.table
 #'
 #' Returns a data_table using read.table
@@ -98,4 +81,18 @@ write.tsv <- function(x, file, rownames=F, ...){
 #' @export
 read_table <- function(...){
     read.table(...) %>% dplyr::as_data_frame
+}
+
+#' Writes a data_frame/etc to a file using custom parameters
+#'
+#' Utilizes the builtin write.table with the following changes:
+#'   - No rownames
+#'   - No quoting
+#'   - Tab for sep
+#' @param df Data.frame or similar printable object
+#' @param file filename for output
+#' @keywords fileIO
+#' @export
+write_table <- function(df, file, ...){
+    write.table(df, file=file, quote=F, row.names=F, sep="\t", ...)
 }

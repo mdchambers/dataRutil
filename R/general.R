@@ -98,6 +98,15 @@ logd <- function(..., timestamp=T){
 	cat(..., suffix, file=stderr())
 }
 
-
+#' Alias for dplyr::glimpse
+#'
+#' Alias for dplyr::glimpse
+#'
+#' @param ... One or more arguments to pass to dplyr::glimpse
+#' @keywords glimpse
+#' @export
+gi <- function(...){
+	dplyr::glimpse(...)
+}
 
 
