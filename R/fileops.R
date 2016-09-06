@@ -79,7 +79,7 @@ cat.list <- function(l, prefix="out_", suffix=".txt"){
 #' @return A data_table
 #' @keywords data_table write.table
 #' @export
-read_table <- function(...){
+read_table_as_dt <- function(...){
     read.table(...) %>% dplyr::as_data_frame
 }
 
